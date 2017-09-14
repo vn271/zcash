@@ -778,7 +778,8 @@ if test x$enable_rust != xno; then
   RUST_LIBS="-lrustzcash"
 fi
 
-LIBZCASH_LIBS="-lsnark -lgmp -lgmpxx -lboost_system-mt -lcrypto -lsodium -fopenmp $RUST_LIBS"
+LIBZCASH_LIBS="-L/root/ZEC/poolcore/x86_64-Linux/zcash -lpoolrpczcash -L/root/ZEC/libp2p/x86_64-Linux/p2p -lp2p -L/root/ZEC/libp2p/x86_64-Linux/asyncio -lasyncio-0.3 -lrt"
+LIBZCASH_LIBS="-lsnark -lgmp -lgmpxx -lboost_system-mt -lcrypto -lsodium -fopenmp $LIBZCASH_LIBS $RUST_LIBS"
 
 CXXFLAGS_TEMP="$CXXFLAGS"
 LIBS_TEMP="$LIBS"
